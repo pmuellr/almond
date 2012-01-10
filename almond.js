@@ -101,6 +101,8 @@ var requirejs, require, define;
             delete waiting[name];
             main.apply(undef, args);
         }
+        
+        if (!defined.hasOwnProperty(name)) throw "module not defined: '" + name + "'";
         return defined[name];
     }
 
